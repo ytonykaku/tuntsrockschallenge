@@ -1,4 +1,4 @@
-import gspread
+import gspread # gspread não funcionava
 from google.oauth2.service_account import Credentials
 
 def main():
