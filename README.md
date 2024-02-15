@@ -1,4 +1,4 @@
 Para executar:
 
-pip install -r rrequirements.txt <br>
+pip install -r requirements.txt <br>
 python main.py
