@@ -62,11 +62,13 @@ def evaluate_student(row, data, total_classes, worksheet):
     #Avaliação da frequência
     if attendance > total_attendance:
         update_worksheet(worksheet, row + 1, "Reprovado por Falta", True)
+        update_worksheet(worksheet, row + 1, 0, False)  # Exame final
         return
 
     #Avaliação das notas
     if average_grade < 50:
         update_worksheet(worksheet, row + 1, "Reprovado por Nota", True) #Reprovado
+        update_worksheet(worksheet, row + 1, 0, False)  # Exame final
     elif 50 <= average_grade < 70:
         # Calcula nota para exame final
         naf = round(100 - average_grade)
@@ -74,6 +76,7 @@ def evaluate_student(row, data, total_classes, worksheet):
         update_worksheet(worksheet, row + 1, naf, False)    #Exame final
     else:
         update_worksheet(worksheet, row + 1, "Aprovado", True)  #Aprovado
+        update_worksheet(worksheet, row + 1, 0, False)  # Exame final
 
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
 
