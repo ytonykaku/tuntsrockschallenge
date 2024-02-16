@@ -68,8 +68,8 @@ def evaluate_student(row, data, total_classes, worksheet):
     if average_grade < 50:
         update_worksheet(worksheet, row + 1, "Reprovado por Nota", True) #Reprovado
     elif 50 <= average_grade < 70:
-        # Calculate "Nota para Aprovação Final" for Exame Final
-        naf = max(0, 100 - average_grade)
+        # Calcula nota para exame final
+        naf = round(100 - average_grade)
         update_worksheet(worksheet, row + 1, "Exame Final", True)
         update_worksheet(worksheet, row + 1, naf, False)    #Exame final
     else:
